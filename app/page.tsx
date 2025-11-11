@@ -47,7 +47,6 @@ function Header() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        filter: "brightness(0.4)",
       }}
     >
       {/* Conteúdo sobre o background */}
