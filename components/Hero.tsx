@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section>
+    <section className="relative">
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center text-center mt-8 lg:mt-12 gap-8 lg:gap-20 px-4">
         <Image
           src="/IconHome.svg"
@@ -10,10 +10,11 @@ export default function HeroSection() {
           width={610}
           height={374}
           priority
+          className="w-full max-w-md lg:max-w-xl h-auto"
         />
 
         {/* Conteúdo textual */}
-        <div className="text-center lg:text-left flex flex-col gap-4 lg:gap-6 lg:mt-12 max-w-md ">
+        <div className="text-center lg:text-left flex flex-col gap-4 lg:gap-6 lg:mt-12 max-w-md">
           <div className="flex flex-col gap-4 lg:gap-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center lg:text-start">
               Não é desconto de fachada. <br />
@@ -33,17 +34,8 @@ export default function HeroSection() {
           </a>
         </div>
       </div>
-      {/* Imagem decorativa de faixas */}
-      <div className="block sm:translate-y-24 lg:translate-y-4 sm:mt-0 lg:mt-12 mx-auto">
-        <Image
-          src="/Faixas.svg"
-          alt="Ilustração Faixas Black Ancore"
-          width={140}
-          height={1000}
-          className="w-full h-60 object-cover"
-          preload
-        />
-      </div>
+
+      {/* FAIXAS REMOVIDAS DAQUI - AGORA ESTÃO NO PAGE.TSX */}
     </section>
   );
 }
