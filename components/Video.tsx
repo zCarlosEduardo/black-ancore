@@ -18,11 +18,12 @@ export default function VideoSection() {
       {/* Container para vídeo ou imagem */}
       <div className="bg-gray-800 w-full max-w-sm md:max-w-2xl lg:max-w-5xl h-64 md:h-96 lg:h-[520px] rounded-xl relative z-10 flex items-center justify-center">
         {/* Vídeo incorporado */}
-        <iframe
-          className="w-full h-full rounded-xl"
-          src="https://www.youtube.com/embed/"
-          title="YouTube video player"
-        ></iframe>
+    <iframe
+      className="w-full h-full rounded-xl"
+      src="https://www.youtube.com/embed/"
+      title="YouTube video player"
+      loading="lazy"
+    ></iframe>
       </div>
 
       {/* CTA */}

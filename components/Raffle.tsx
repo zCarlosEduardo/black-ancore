@@ -35,6 +35,7 @@ export default function RaffleSection() {
             width={600}
             height={550}
             className="w-full max-w-md sm:max-w-xl md:max-w-4xl lg:w-[700px] xl:w-[960px]"
+            loading="lazy"
           />
 
           {/* Conteúdo textual */}

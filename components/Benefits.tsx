@@ -21,7 +21,7 @@ function BenefitsSection() {
       <div
         className="bg-cover bg-center bg-no-repeat relative w-full flex items-center justify-center py-12 md:py-16 shadow-2xl"
         style={{
-          backgroundImage: "url('/BackgroundBeneficiosMobile.svg')",
+          backgroundImage: "url('/BackgroundBeneficiosMobile.webp')",
           boxShadow: "inset 0 0 720px rgba(0, 0, 0, 100)",
           minHeight: "calc(100vh - 250px)",
         }}
@@ -29,7 +29,7 @@ function BenefitsSection() {
         <div
           className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/BackgroundBeneficios.jpg')",
+        backgroundImage: "url('/BackgroundBeneficios.webp')",
           }}
         />
         <div

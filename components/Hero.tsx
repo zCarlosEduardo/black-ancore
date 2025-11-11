@@ -4,12 +4,12 @@ export default function HeroSection() {
   return (
     <section>
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center text-center mt-8 lg:mt-12 gap-8 lg:gap-20 px-4">
-        {/* Imagem principal */}
         <Image
           src="/IconHome.svg"
           alt="Ilustração Black Ancore"
           width={610}
           height={374}
+          priority
         />
 
         {/* Conteúdo textual */}
@@ -41,6 +41,7 @@ export default function HeroSection() {
           width={140}
           height={1000}
           className="w-full h-60 object-cover"
+          preload
         />
       </div>
     </section>

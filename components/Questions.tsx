@@ -44,6 +44,7 @@ export default function QuestionsSection() {
             width={120}
             height={56}
             className="md:w-[140px] lg:w-40"
+            loading="lazy"
           />
           <p className="max-w-md text-gray-300">
             Se você tiver alguma dúvida sobre a Black Ancore, estamos à

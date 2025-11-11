@@ -26,9 +26,9 @@ export default function Home() {
 function Header() {
   return (
     <header
-      className="bg-cover bg-center bg-no-repeat relative"
+      className="bg-cover bg-center bg-no-repeat relative "
       style={{
-        backgroundImage: "url('/BackgroundHome.jpg')",
+        backgroundImage: "url('/BackgroundHome.webp')",
         height: "calc(100vh - 2rem)",
         boxShadow: "inset 0 0 500px rgba(0, 0, 0, 100)",
       }}
