@@ -7,8 +7,9 @@ export default function HeroSection() {
         <Image
           src="/IconHome.svg"
           alt="Ilustração Black Ancore"
-          width={610}
-          height={374}
+          width={600}
+          height={550}
+          loading="eager"
           priority
           className="w-full max-w-md lg:max-w-xl h-auto"
         />
@@ -35,7 +36,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* FAIXAS REMOVIDAS DAQUI - AGORA ESTÃO NO PAGE.TSX */}
     </section>
   );
 }

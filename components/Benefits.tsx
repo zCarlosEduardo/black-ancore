@@ -26,9 +26,9 @@ export default function BenefitsSection() {
           sizes="100vw"
           quality={75}
           priority={false} // não é a primeira seção
-                  style={{
-          filter: "brightness(0.4)", 
-        }}
+          style={{
+            filter: "brightness(0.4)",
+          }}
         />
 
         {/* Background Desktop - carrega apenas em desktop */}
@@ -63,8 +63,8 @@ export default function BenefitsSection() {
                   key={index}
                   className="flex gap-2 text-xl md:text-2xl lg:text-3xl font-light"
                 >
-                  <ArrowUpRight 
-                    className="w-6 h-6 md:w-8 md:h-8 font-extralight shrink-0" 
+                  <ArrowUpRight
+                    className="w-6 h-6 md:w-8 md:h-8 font-extralight shrink-0"
                     aria-hidden="true"
                   />
                   <span>

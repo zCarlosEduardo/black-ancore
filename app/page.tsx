@@ -42,7 +42,7 @@ function Header() {
     <header
       className="relative overflow-hidden"
       style={{
-        height: "calc(100vh - 2rem)",
+        height: "100vh",
       }}
     >
       {/* Background otimizado com next/image */}
