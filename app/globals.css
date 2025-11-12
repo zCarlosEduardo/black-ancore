@@ -17,3 +17,11 @@ body {
   color: var(--foreground);
   font-family: "Commissioner", sans-serif;
 }
+
+header {
+  background-image: url('/BackgroundHome.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

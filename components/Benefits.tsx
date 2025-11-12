@@ -16,7 +16,17 @@ export default function BenefitsSection() {
       {/* Divider superior */}
       <div className="hidden md:block w-full h-1 bg-linear-to-r from-white to-red-600" />
 
-      <div className="relative w-full flex items-center justify-center py-12 md:py-16 min-h-[calc(100vh-250px)]">
+      <div
+        className="relative w-full flex items-center justify-center py-12 md:py-16 min-h-[calc(100vh-250px)]"
+        style={{
+          height: "95vh",
+          backgroundImage: "url('/BackgroundBeneficios.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          
+        }}
+      >
         {/* Background Mobile - carrega apenas em mobile */}
         <Image
           src="/BackgroundBeneficiosMobile.webp"
@@ -25,21 +35,10 @@ export default function BenefitsSection() {
           className="object-cover md:hidden"
           sizes="100vw"
           quality={75}
-          priority={false} // não é a primeira seção
+          priority={false}
           style={{
             filter: "brightness(0.4)",
           }}
-        />
-
-        {/* Background Desktop - carrega apenas em desktop */}
-        <Image
-          src="/BackgroundBeneficios.webp"
-          alt=""
-          fill
-          className="hidden md:block object-cover"
-          sizes="100vw"
-          quality={80}
-          priority={false}
         />
 
         {/* Overlay escuro */}

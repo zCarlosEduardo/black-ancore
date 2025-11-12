@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
 
       {/* FAIXAS AQUI FORA DO HEADER! */}
-      <div className="relative w-full h-48 sm:h-60 -mt-32 sm:-mt-40 lg:-mt-48 z-50 pointer-events-none sm:translate-y-16 lg:translate-y-28">
+      <div className="relative w-full h-48 sm:h-60 -mt-32 sm:-mt-40 lg:-mt-48 z-50 pointer-events-none sm:translate-y-32 lg:translate-y-28">
         <Image
           src="/Faixas.svg"
           alt=""
@@ -40,14 +40,11 @@ export default function Home() {
 function Header() {
   return (
     <header
-      className="relative overflow-hidden"
-      style={{
-        height: "100vh",
-        backgroundImage: "url('/BackgroundHome.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative overflow-hidden bg-cover bg-center bg-no-repeat h-[115vh] sm:h-[95vh]"
+      // style={{
+      //   backgroundImage: "url('/BackgroundHome.webp')",
+        
+      // }}
     >
       {/* Conteúdo sobre o background */}
       <div className="relative z-10">
