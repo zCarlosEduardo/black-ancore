@@ -16,7 +16,7 @@ export default function VideoSection() {
       </div>
 
       {/* Container para vídeo - SEM z-10 */}
-      <div className="bg-gray-800 w-full max-w-sm md:max-w-2xl lg:max-w-5xl h-64 md:h-96 lg:h-[520px] rounded-xl relative flex items-center justify-center overflow-hidden">
+      <div className="bg-stone-950/40 w-full max-w-sm md:max-w-2xl lg:max-w-5xl h-64 md:h-96 lg:h-[520px] rounded-xl relative flex items-center justify-center overflow-hidden">
         <iframe
           className="w-full h-full rounded-xl"
           src="https://www.youtube.com/embed/?rel=0"

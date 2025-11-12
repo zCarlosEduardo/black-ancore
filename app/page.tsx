@@ -40,11 +40,7 @@ export default function Home() {
 function Header() {
   return (
     <header
-      className="relative overflow-hidden bg-cover bg-center bg-no-repeat h-[115vh] sm:h-[95vh]"
-      // style={{
-      //   backgroundImage: "url('/BackgroundHome.webp')",
-        
-      // }}
+      className="relative overflow-hidden h-[115vh] sm:h-[95vh]"
     >
       {/* Conteúdo sobre o background */}
       <div className="relative z-10">

@@ -4,7 +4,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
-// Dados movidos para fora (não recriam a cada render)
 const NAV_LINKS = [
   { href: "#inicio", label: "Início" },
   { href: "#beneficios", label: "Benefícios" },
@@ -16,7 +15,6 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#inicio");
 
-  // Fecha o menu ao apertar ESC
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsOpen(false);
@@ -24,7 +22,7 @@ export default function Navigation() {
     
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden'; // Previne scroll no background
+      document.body.style.overflow = 'hidden';
     }
     
     return () => {
@@ -33,7 +31,19 @@ export default function Navigation() {
     };
   }, [isOpen]);
 
-  // Otimiza a função de toggle
+  const handleSmoothScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    const element = document.querySelector(targetId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      setActiveSection(targetId);
+    }
+  }, []);
+
   const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setIsOpen(false), []);
 
@@ -62,7 +72,7 @@ export default function Navigation() {
               } ${index === 0 ? "ml-4 xl:ml-6" : ""} ${
                 index === NAV_LINKS.length - 1 ? "mr-4 xl:mr-6" : ""
               }`}
-              onClick={() => setActiveSection(link.href)}
+              onClick={(e) => handleSmoothScroll(e, link.href)}
             >
               {link.label}
             </a>
@@ -72,6 +82,7 @@ export default function Navigation() {
         {/* CTA Button */}
         <a
           href="#formulario"
+          onClick={(e) => handleSmoothScroll(e, "#formulario")}
           className="bg-red-600 hover:bg-red-700 text-white font-extrabold py-4 px-12 rounded-full transition-all text-sm inline-block text-center hover:scale-105 active:scale-95 whitespace-nowrap"
         >
           QUERO MEU DESCONTO!
@@ -135,8 +146,8 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => {
-                  setActiveSection(link.href);
+                onClick={(e) => {
+                  handleSmoothScroll(e, link.href);
                   closeMenu();
                 }}
                 className={`py-4 md:py-5 px-6 md:px-8 hover:bg-red-600/20 transition-colors text-base md:text-lg ${
@@ -157,7 +168,10 @@ export default function Navigation() {
             <div className="p-4 md:p-6">
               <a
                 href="#formulario"
-                onClick={closeMenu}
+                onClick={(e) => {
+                  handleSmoothScroll(e, "#formulario");
+                  closeMenu();
+                }}
                 className="bg-red-600 hover:bg-red-700 text-white font-extrabold py-3 md:py-4 px-4 md:px-6 rounded-full transition-all text-sm md:text-base w-full inline-block text-center hover:scale-105 active:scale-95"
               >
                 QUERO MEU DESCONTO!
@@ -168,8 +182,4 @@ export default function Navigation() {
       </div>
     </section>
   );
-}
-
-function setActiveSection(href: string) {
-  throw new Error('Function not implemented.');
 }
