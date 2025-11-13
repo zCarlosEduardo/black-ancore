@@ -4,8 +4,14 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: nextjs-app
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     environment:
       - NODE_ENV=production
     restart: always
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
