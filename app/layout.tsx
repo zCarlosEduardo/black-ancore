@@ -3,8 +3,8 @@ import "./globals.css";
 import { Commissioner } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Ancore Black",
-   description: 'Ancore BlackFriday: Aproveite descontos exclusivos',
+  title: "Black - Ancore",
+  description: 'Ancore BlackFriday: Aproveite descontos exclusivos',
 };
 
 const commissioner = Commissioner({

@@ -37,12 +37,12 @@ export default function BenefitsSection() {
           quality={75}
           priority={false}
           style={{
-            filter: "brightness(0.4)",
+            filter: "brightness(0.5)",
           }}
         />
 
         {/* Overlay escuro */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/30" />
 
         {/* Conteúdo */}
         <div className="relative z-10 flex flex-col justify-between md:justify-center gap-8 md:gap-12 px-4 md:px-8 max-w-2xl md:max-w-none md:-translate-x-20 lg:-translate-x-60 text-center md:text-left items-center md:items-start min-h-[calc(100vh-250px)] md:min-h-screen">

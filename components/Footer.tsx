@@ -23,11 +23,11 @@ export default function FooterSection() {
                         </a>
                         <span>{" | "}</span>
                         <a
-                            href="https://instagram.com/c.eduzin"
+                            href="https://www.linkedin.com/in/carlos-eduardo-3a1462292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            @c.eduzin
+                            Carlos Eduardo
                         </a>
                     </span>
                 </span>
