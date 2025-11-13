@@ -109,6 +109,7 @@ export default function PowerCRMForm() {
                     </label>
                     <input
                       type="tel"
+                      required
                       placeholder="(__) _____-____"
                       maxLength={11}
                       className="phone_mask w-full px-4 py-3 bg-black/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all"
