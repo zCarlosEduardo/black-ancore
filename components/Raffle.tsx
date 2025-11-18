@@ -39,8 +39,8 @@ export default function RaffleSection() {
           </h2>
           <p className="text-xl md:text-2xl lg:text-2xl xl:text-3xl font-light max-w-xl md:max-w-2xl lg:max-w-[568px]">
             Durante o período da{" "}
-            <span className="font-bold">Black Ancore,</span> todo novo
-            associado concorre automaticamente a{" "}
+            <span className="font-bold">Black Ancore,</span> todo novo associado
+            concorre automaticamente a{" "}
             <span className="font-bold">5 PIX de R$1.000,00.</span> Nada de
             cupom, nada de sorteio enrolado,{" "}
             <span className="font-bold">fechou, tá dentro!</span>
@@ -49,7 +49,7 @@ export default function RaffleSection() {
       </section>
 
       <section id="formulario" className="relative z-10">
-      {/* <PowerCRMForm /> */}
+        <PowerCRMForm />
       </section>
 
       <QuestionsSection />
