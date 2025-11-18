@@ -1,0 +1,17 @@
+services:
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs-app
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+    restart: always
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
