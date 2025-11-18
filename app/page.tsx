@@ -21,11 +21,11 @@ export default function Home() {
         />
       </div>
 
-      <main className="relative">
+      <div className="relative">
         <VideoSection />
         <BenefitsSection />
         <RaffleSection />
-      </main>
+      </div>
       <FooterSection />
     </>
   );
@@ -33,11 +33,11 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="relative overflow-hidden h-[115vh] sm:h-[95vh] xl:h-[95vh] lg:h-[120vh]">
+    <div className="relative overflow-hidden h-[115vh] sm:h-[95vh] xl:h-[95vh] lg:h-[120vh]">
       <div className="relative z-10">
         <Navigation />
         <HeroSection />
       </div>
-    </header>
+    </div>
   );
 }
