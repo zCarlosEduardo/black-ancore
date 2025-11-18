@@ -49,7 +49,7 @@ export default function RaffleSection() {
       </section>
 
       <section id="formulario" className="relative z-10">
-        <PowerCRMForm />
+      {/* <PowerCRMForm /> */}
       </section>
 
       <QuestionsSection />
