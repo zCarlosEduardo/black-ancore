@@ -48,7 +48,7 @@ export default function Navigation() {
   const closeMenu = useCallback(() => setIsOpen(false), []);
 
   return (
-    <section className="pt-8 lg:pt-18">
+    <section className="pt-8 xl:pt-8 lg:pt-18">
       {/* Desktop Navigation */}
       <div className="hidden lg:flex flex-row items-center gap-8 xl:gap-12 p-4 justify-center w-full">
         {/* Logo otimizado */}
