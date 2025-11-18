@@ -2,7 +2,7 @@
 
 export default function FooterSection() {
     return (
-        <footer>
+        <section>
             <div className="container mx-auto py-6 px-4 text-center border-t-2 border-gray-600 text-white flex flex-row justify-center items-center flex-wrap gap-12 text-sm pt-24 mt-12 mb-32">
                 <p>
                     Copyright © 2025 Ancore. Todos os direitos reservados. 
@@ -34,6 +34,6 @@ export default function FooterSection() {
                     </span>
                 </span>
             </div>
-        </footer>
+        </section>
     );
 }

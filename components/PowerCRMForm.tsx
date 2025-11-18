@@ -5,7 +5,6 @@ import PowerScript from "./PowerCRMFormScript";
 
 export default function PowerCRMForm() {
 
-  <PowerScript />
   
   useEffect(() => {
     
@@ -40,6 +39,7 @@ export default function PowerCRMForm() {
 
   return (
     <>
+  <PowerScript />
       <section
         id="formulario"
         className="relative py-16 md:py-24 lg:py-32 px-4"
