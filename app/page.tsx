@@ -33,7 +33,7 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="relative overflow-hidden h-[115vh] sm:h-[95vh] xl:h-[110vh] lg:h-[120vh]">
+    <header className="relative overflow-hidden h-[145vh] sm:h-[95vh] xl:h-[125vh] lg:h-[120vh] 2xl:h-[95vh]">
       <div className="relative z-10">
         <Navigation />
         <HeroSection />
