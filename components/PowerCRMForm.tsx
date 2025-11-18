@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import Script from "next/script";
+import PowerScript from "./PowerCRMFormScript";
 
 export default function PowerCRMForm() {
+
+  <PowerScript />
+  
   useEffect(() => {
-    // Aguarda o script do PowerCRM carregar antes de aplicar os estilos customizados
+    
     const checkAndStyleForm = setInterval(() => {
       const form = document.getElementById("pwrcrmform");
       if (form) {
@@ -214,11 +217,6 @@ export default function PowerCRMForm() {
         </div>
       </section>
 
-      {/* Script do PowerCRM */}
-      <Script
-        src="https://resources.powercrm.com.br/assets/external/js/script.pwrcrm.js"
-        strategy="afterInteractive"
-      />
     </>
   );
 }
