@@ -1,24 +1,37 @@
 import CTAButton from "./CTAButton";
+import Image from "next/image";
 
 const BLUR_EFFECTS = [
   {
     className:
-      "hidden md:block absolute top-1/3 left-0 -translate-x-1/4 -translate-y-1/5 bg-red-600 opacity-10 blur-3xl w-[900px] h-[700px] rounded-full pointer-events-none",
+      "hidden md:block absolute top-1/3 left-0 -translate-x-1/4 -translate-y-1/5 bg-red-600 opacity-10 blur-3xl w-[800px] h-[700px] rounded-full pointer-events-none will-change-transform",
   },
   {
     className:
-      "md:hidden absolute top-1/4 right-0 translate-x-1/4 bg-red-600 opacity-20 blur-3xl w-80 h-80 rounded-full pointer-events-none",
+      "md:hidden absolute top-1/4 right-0 bg-red-600 opacity-20 blur-xl w-48 h-48 rounded-full pointer-events-none will-change-transform"
   },
   {
     className:
-      "md:hidden absolute bottom-5 -left-12 -translate-x-1/4 bg-red-600 opacity-20 blur-3xl w-96 h-96 rounded-full pointer-events-none",
+      "md:hidden absolute bottom-5 -left-12 -translate-x-1/4 bg-red-600 opacity-20 blur-xl w-72 h-72 rounded-full pointer-events-none will-change-transform ", 
   },
 ];
 
 export default function VideoSection() {
   return (
-    <section className="flex flex-col gap-8 md:gap-12 justify-center items-center pt-16 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 relative px-4 md:min-h-screen overflow-hidden">
-      {/* Efeito blur decorativo */}
+    <section className="flex flex-col gap-8 md:gap-12 justify-center items-center pt-16 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 relative px-4 md:min-h-screen overflow-visible min-h-0 "> 
+
+      <div className="absolute top-0 left-0 w-full h-48 sm:h-60 -mt-32 sm:-mt-40 lg:-mt-48 z-50 pointer-events-none sm:translate-y-32 lg:translate-y-28">
+        <Image
+          src="/Faixas.svg"
+          alt=""
+          fill
+          className="object-cover"
+          loading="eager"
+          priority
+          aria-hidden="true"
+        />
+      </div>
+
       {BLUR_EFFECTS.map((effect, i) => (
         <div key={i} className={effect.className} />
       ))}

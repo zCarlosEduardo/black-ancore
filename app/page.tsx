@@ -4,23 +4,11 @@ import HeroSection from "@/components/Hero";
 import Navigation from "@/components/Nav";
 import RaffleSection from "@/components/Raffle";
 import VideoSection from "@/components/Video";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <div className="relative w-full h-48 sm:h-60 -mt-32 sm:-mt-40 lg:-mt-48 z-50 pointer-events-none sm:translate-y-32 lg:translate-y-28">
-        <Image
-          src="/Faixas.svg"
-          alt=""
-          fill
-          className="object-cover"
-          priority={false}
-          aria-hidden="true"
-        />
-      </div>
-
       <div className="relative">
         <VideoSection />
         <BenefitsSection />
@@ -33,7 +21,7 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="relative overflow-hidden h-[145vh] sm:h-[95vh] xl:h-[125vh] lg:h-[120vh] 2xl:h-[95vh]">
+    <header className="relative overflow-hidden min-h-[calc(100vh+4rem)] sm:min-h-[calc(100vh+4rem)] md:min-h-[calc(85vh)] lg:min-h-[calc(100vh+4rem)] xl:min-h-[calc(100vh+12rem)] header-2xl">
       <div className="relative z-10">
         <Navigation />
         <HeroSection />

@@ -24,3 +24,15 @@ header {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media (min-width: 1536px) {
+  .header-2xl {
+    min-height: calc(95vh);
+  }
+  
+  @media (max-height: 900px) {
+    .header-2xl {
+      min-height: calc(112vh);
+    }
+  }
+}

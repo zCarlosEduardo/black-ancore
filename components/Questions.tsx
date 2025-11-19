@@ -12,13 +12,16 @@ interface FAQItemProps {
 function FAQItem({ question, answer }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const faqId = `faq-${question.replace(/\s+/g, '-').toLowerCase()}`;
+
   return (
-    <div className="bg-gray-800/20 rounded-md px-4 transition-all duration-300">
+    <article className="bg-gray-800/20 rounded-md px-4 transition-all duration-300">
       <button
         className="w-full text-left py-4 flex justify-between items-center gap-4"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        aria-controls={`faq-${question.slice(0, 20)}`}
+        aria-controls={faqId}
+        aria-label={`Expandir ou recolher a resposta para: ${question}`}
       >
         <span className="font-medium">{question}</span>
         <span 
@@ -30,45 +33,46 @@ function FAQItem({ question, answer }: FAQItemProps) {
       </button>
       {isOpen && (
         <div 
-          id={`faq-${question.slice(0, 20)}`}
+          id={faqId}
           className="pb-4 text-gray-300 animate-in slide-in-from-top-2 duration-200"
+          role="region"
+          aria-labelledby={`heading-${faqId}`}
         >
+          <h3 id={`heading-${faqId}`} className="sr-only">{question}</h3>
           {answer}
         </div>
       )}
-    </div>
+    </article>
   );
 }
 
-// Dados movidos para fora do componente (não recriam a cada render)
 const FAQ_DATA = [
   {
     question: "Quando começa e termina a Black Ancore?",
-    answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    answer: "A Black Ancore começa no dia 17 de novembro e termina no dia 30 de novembro."
   },
   {
     question: "Como funciona o sorteio dos R$1.000?",
-    answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    answer: "Serão sorteados 5 PIX de R$1.000 entre os novos associados que fecharem a proteção durante o período da Black Ancore, de 17 a 30 de novembro. O sorteio será realizado no dia 10 de dezembro, às 17h."
   },
   {
     question: "Os benefícios são válidos por quanto tempo?",
-    answer: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    answer: "Os brindes especiais da Black já estarão vigentes no momento da ativação da proteção. Os benefícios do plano de proteção seguem válidos durante toda a vigência da filiação, conforme contratado."
   },
-  {
-    question: "Posso parcelar o pagamento?",
-    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  }
 ] as const;
 
 export default function QuestionsSection() {
   return (
-    <section className="container py-16 px-4 mx-auto">
+    <section 
+      id="perguntas-frequentes"
+      className="container py-16 px-4 mx-auto"
+      aria-labelledby="faq-main-title"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
-        {/* Left Column: Contact Support */}
-        <div className="flex flex-col justify-center items-center bg-slate-700/40 rounded-md px-6 md:px-8 py-8 lg:py-12 gap-6 text-center max-w-md lg:max-w-lg mx-auto lg:mx-0 lg:sticky lg:top-24">
+        <aside className="flex flex-col justify-center items-center bg-slate-700/40 rounded-md px-6 md:px-8 py-8 lg:py-12 gap-6 text-center max-w-md lg:max-w-lg mx-auto lg:mx-0 lg:sticky lg:top-24">
           <Image
             src="/AncoreLogo.svg"
-            alt="Ancore Logo"
+            alt="Logo da Ancore - Empresa de proteção e seguros"
             width={120}
             height={56}
             className="md:w-[140px] lg:w-40 h-auto"
@@ -84,16 +88,20 @@ export default function QuestionsSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium bg-linear-to-r from-emerald-600 to-green-600 py-3 md:py-4 px-8 md:px-10 rounded-md text-sm hover:from-emerald-700 hover:to-green-700 transition-all flex gap-3 items-center hover:scale-105 active:scale-95"
-            aria-label="Entrar em contato via WhatsApp"
+            aria-label="Entrar em contato com o suporte via WhatsApp para dúvidas sobre Black Ancore"
           >
             <PhoneCall className="w-5 h-5" aria-hidden="true" />
             <span>FALAR COM O SUPORTE</span>
           </a>
-        </div>
+        </aside>
         
-        {/* Right Column: FAQ */}
-        <div className="flex flex-col gap-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4">Perguntas Frequentes</h2>
+        <div className="flex flex-col gap-4" role="region" aria-labelledby="faq-main-title">
+          <h2 
+            id="faq-main-title"
+            className="text-2xl md:text-3xl font-bold mb-2 md:mb-4"
+          >
+            Perguntas Frequentes sobre Black Ancore
+          </h2>
           {FAQ_DATA.map((faq, index) => (
             <FAQItem 
               key={`faq-${index}`} 
