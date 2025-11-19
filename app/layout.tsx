@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Commissioner } from "next/font/google";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Black - Ancore",
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className="scroll-smooth">
       <body className={`${commissioner.variable} antialiased font-sans`}>
+        <ScrollToTop />
         {children}
       </body>
     </html>
