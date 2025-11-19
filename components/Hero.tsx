@@ -1,7 +1,8 @@
+import { memo } from "react";
 import Image from "next/image";
 import CTAButton from "./CTAButton";
 
-export default function HeroSection() {
+const HeroSection = memo(() => {
   return (
     <section className="mt-20 flex items-center justify-center px-4 min-h-0">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-16 xl:gap-20 w-full max-w-7xl">
@@ -12,6 +13,7 @@ export default function HeroSection() {
           height={550}
           loading="eager"
           priority
+          fetchPriority="high"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto aspect-600/550"
         />
@@ -32,4 +34,8 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
+});
+
+HeroSection.displayName = "HeroSection";
+
+export default HeroSection;

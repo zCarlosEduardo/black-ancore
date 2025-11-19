@@ -27,7 +27,7 @@ const BenefitsSection = memo(() => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Background Mobile */}
+        {/* Background Mobile - Otimizado com priority se for acima da dobra */}
         <Image
           src="/BackgroundBeneficiosMobile.webp"
           alt=""
@@ -36,6 +36,7 @@ const BenefitsSection = memo(() => {
           sizes="100vw"
           quality={75}
           loading="lazy"
+          priority={false} 
           style={{
             filter: "brightness(0.5)",
           }}

@@ -1,14 +1,16 @@
 'use client';
 
-export default function CTAButton({
+import { memo, useCallback } from "react";
+
+const CTAButton = memo(({
   text,
   extraClasses = "",
 }: {
   text: string;
   extraClasses?: string;
-}) {
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); // Previne o comportamento padrão do link
+}) => {
+  const handleSmoothScroll = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     
     const element = document.querySelector("#formulario");
     if (element) {
@@ -17,7 +19,7 @@ export default function CTAButton({
         block: 'start'
       });
     }
-  };
+  }, []);
 
   return (
     <a
@@ -28,4 +30,8 @@ export default function CTAButton({
       {text}
     </a>
   );
-}
+});
+
+CTAButton.displayName = "CTAButton";
+
+export default CTAButton;

@@ -1,24 +1,28 @@
 'use client';
 
+import { memo, useCallback, useState } from "react";
 import { ChevronDown, ChevronUp, PhoneCall } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 
 interface FAQItemProps {
   question: string;
   answer: string;
 }
 
-function FAQItem({ question, answer }: FAQItemProps) {
+const FAQItem = memo(({ question, answer }: FAQItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const faqId = `faq-${question.replace(/\s+/g, '-').toLowerCase()}`;
+
+  const toggleOpen = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
   return (
     <article className="bg-gray-800/20 rounded-md px-4 transition-all duration-300">
       <button
         className="w-full text-left py-4 flex justify-between items-center gap-4"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleOpen}
         aria-expanded={isOpen}
         aria-controls={faqId}
         aria-label={`Expandir ou recolher a resposta para: ${question}`}
@@ -44,7 +48,9 @@ function FAQItem({ question, answer }: FAQItemProps) {
       )}
     </article>
   );
-}
+});
+
+FAQItem.displayName = "FAQItem";
 
 const FAQ_DATA = [
   {
@@ -61,7 +67,7 @@ const FAQ_DATA = [
   },
 ] as const;
 
-export default function QuestionsSection() {
+const QuestionsSection = memo(() => {
   return (
     <section 
       id="perguntas-frequentes"
@@ -113,4 +119,8 @@ export default function QuestionsSection() {
       </div>
     </section>
   );
-}
+});
+
+QuestionsSection.displayName = "QuestionsSection";
+
+export default QuestionsSection;

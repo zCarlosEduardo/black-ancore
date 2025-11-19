@@ -1,7 +1,11 @@
 import { memo } from "react";
 import Image from "next/image";
-import PowerCRMForm from "./PowerCRMForm";
+import dynamic from "next/dynamic";
 import QuestionsSection from "./Questions";
+
+const PowerCRMForm = dynamic(() => import("./PowerCRMForm"), {
+  loading: () => <div className="min-h-[200px] bg-black animate-pulse" />,
+});
 
 const RaffleSection = memo(() => {
   return (
